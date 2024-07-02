@@ -5,15 +5,15 @@
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
+    "logo": "/images/logo_black.png",
+    "logo_darkmode": "/images/logo_white.png",
+    "logo_width": "35",
     "logo_height": "30",
-    "logo_text": "Astroplate"
+    "logo_text": "Psic"
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "sticky_header": true,
     "theme_switcher": true,
     "default_theme": "system",
@@ -28,7 +28,7 @@
   },
 
   "navigation_button": {
-    "enable": true,
+    "enable": false,
     "label": "Get Started",
     "link": "https://github.com/zeon-studio/astroplate"
   },

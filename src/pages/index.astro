@@ -32,9 +32,9 @@ const { banner, features }: Homepage = homepage.data;
         <div class="lg:col-7 md:col-9 mb-8 text-center">
           <h1
             set:html={markdownify(banner.title)}
-            class="mb-4 text-h3 lg:text-h1"
+            class="mb-4 text-h1 lg:text-h1"
           />
-          <p set:html={markdownify(banner.content)} class="mb-8" />
+          <p set:html={markdownify(banner.content)} class="mb-8 text-2xl" />
           {
             banner.button.enable && (
               <a
@@ -52,13 +52,13 @@ const { banner, features }: Homepage = homepage.data;
         </div>
         {
           banner.image && (
-            <div class="col-12">
+            <div class="col-6">
               <ImageMod
                 src={banner.image}
-                height={380}
-                width={1200}
+                height={400}
+                width={700}
                 alt="banner"
-                format="webp"
+                format="png"
               />
             </div>
           )
@@ -86,18 +86,18 @@ const { banner, features }: Homepage = homepage.data;
               />
             </div>
             <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
-              <h2 set:html={markdownify(feature.title)} class="mb-4" />
-              <p set:html={markdownify(feature.content)} class="mb-8 text-lg" />
+              <h2 set:html={markdownify(feature.title)} class="mb-4 text-4xl" />
+              <p set:html={markdownify(feature.content)} class="mb-8 text-2xl" />
               <ul>
                 {feature.bulletpoints.map((bullet: string) => (
                   <li class="relative mb-4 pl-6">
                     <FaCheck className={"absolute left-0 top-1.5"} />
-                    <span set:html={markdownify(bullet)} />
+                    <span set:html={markdownify(bullet)} class="text-2xl"/>
                   </li>
                 ))}
               </ul>
               {feature.button.enable && (
-                <a class="btn btn-primary mt-5" href={feature.button.link}>
+                <a class="btn btn-primary m-5 text-2xl" href={feature.button.link}>
                   {feature.button.label}
                 </a>
               )}
