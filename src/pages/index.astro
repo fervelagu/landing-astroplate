@@ -1,12 +1,12 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
-import { markdownify } from "@/lib/utils/textConverter";
+import {markdownify} from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
 import Testimonial from "@/partials/Testimonial.astro";
-import type { Button, Feature } from "@/types";
-import { getEntry } from "astro:content";
-import { FaCheck } from "react-icons/fa";
+import type {Button, Feature} from "@/types";
+import {getEntry} from "astro:content";
+import {FaCheck} from "react-icons/fa";
 
 interface Homepage {
   banner: {
@@ -21,7 +21,7 @@ interface Homepage {
 const homepage = await getEntry("homepage", "-index");
 const testimonial = await getEntry("sections", "testimonial");
 const call_to_action = await getEntry("sections", "call-to-action");
-const { banner, features }: Homepage = homepage.data;
+const {banner, features}: Homepage = homepage.data;
 ---
 
 <Base>
@@ -30,21 +30,11 @@ const { banner, features }: Homepage = homepage.data;
     <div class="container">
       <div class="row justify-center">
         <div class="lg:col-7 md:col-9 mb-8 text-center">
-          <h1
-            set:html={markdownify(banner.title)}
-            class="mb-4 text-h1 lg:text-h1"
-          />
+          <h1 set:html={markdownify(banner.title)} class="mb-4 text-h1 lg:text-h1" />
           <p set:html={markdownify(banner.content)} class="mb-8 text-2xl" />
           {
             banner.button.enable && (
-              <a
-                class="btn btn-primary"
-                href={banner.button.link}
-                target={
-                  banner.button.link.startsWith("http") ? "_blank" : "_self"
-                }
-                rel="noopener"
-              >
+              <a class="btn btn-primary" href={banner.button.link} target={banner.button.link.startsWith("http") ? "_blank" : "_self"} rel="noopener">
                 {banner.button.label}
               </a>
             )
@@ -53,13 +43,7 @@ const { banner, features }: Homepage = homepage.data;
         {
           banner.image && (
             <div class="col-6">
-              <ImageMod
-                src={banner.image}
-                height={400}
-                width={700}
-                alt="banner"
-                format="png"
-              />
+              <ImageMod src={banner.image} height={400} width={700} alt="banner" format="png" />
             </div>
           )
         }
@@ -74,16 +58,21 @@ const { banner, features }: Homepage = homepage.data;
       <section class={`section-sm ${index % 2 === 0 && "bg-gradient"}`}>
         <div class="container">
           <div class="row items-center justify-between">
-            <div
-              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
-            >
-              <ImageMod
-                src={feature.image}
-                height={480}
-                width={520}
-                alt={feature.title}
-                format="webp"
-              />
+            <div class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}>
+              {feature.images ? (
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: feature.images && feature.images.length === 4 ? "repeat(2, 1fr)" : "repeat(1, 1fr)",
+                    gap: "10px",
+                  }}>
+                  {feature.images.map((img, index: number) => (
+                    <ImageMod src={img} height={480} width={520} alt={feature.title} format="webp" />
+                  ))}
+                </div>
+              ) : (
+                feature.image && <ImageMod src={feature.image} height={480} width={520} alt={feature.title} format="webp" />
+              )}
             </div>
             <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
               <h2 set:html={markdownify(feature.title)} class="mb-4 text-4xl" />
@@ -92,7 +81,7 @@ const { banner, features }: Homepage = homepage.data;
                 {feature.bulletpoints.map((bullet: string) => (
                   <li class="relative mb-4 pl-6">
                     <FaCheck className={"absolute left-0 top-1.5"} />
-                    <span set:html={markdownify(bullet)} class="text-2xl"/>
+                    <span set:html={markdownify(bullet)} class="text-2xl" />
                   </li>
                 ))}
               </ul>

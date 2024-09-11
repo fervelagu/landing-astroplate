@@ -12,27 +12,41 @@ banner:
 # Features
 features:
   - title: "Mi Formación"
-    image: "/images/service-1.png"
+    images: [
+      "/images/De_la_necesidad.jpg", 
+      "/images/Merezco.jpg",
+      "/images/El_amor_propio_es_irse.jpg",
+      "/images/El_proceso_no_es_lineal.jpg"
+    ]
     content: ""
     bulletpoints:
       - "Licenciatura en Psicología"
       - "Maestría en Docencia"
+      - "Diplomados en Psicoterapia Gestalt y Terapia Familiar Sistémica"
       - "Formación en Derechos Humanos de Niñas, Niños y Adolescentes"
       - "Formación en Perspectiva de Género"
       - "Atención especializada a Mujeres Víctimas de Violencia"
+      - "Certificada en el Estándar EC0308"
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
 
   - title: "Agenda tu cita"
-    image: "/images/service-2.png"
+    images: [
+      "/images/Recordatorio.jpg",
+      "/images/Dolor.jpg", 
+      "/images/Lo_que_nos_impulsa.jpg",
+      "/images/La_magia.jpg",
+    ]
     content: "Acompañamiento Psicoterapéutico desde la intervención Gestáltica con Perspectiva de Género"
     bulletpoints:
       - "Mujeres jóvenes y adultas"
-      - "Niñas, niños y adolescentes"
+      - "Niñeces y adolescencias"
       - Duración 60 minutos
       - Costo individual $350 pesos
+      - Modalidad Presencial y En Línea
+      - Ubicación en Av. Marcos Montero Ruiz 147A, Colonia Hacienda de Tlaquepaque, San Pedro Tlaquepaque, Jalisco
     button:
       enable: true
       label: "Agendar por WhatsApp"
