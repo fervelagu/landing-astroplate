@@ -44,7 +44,7 @@ features:
       - "Mujeres jóvenes y adultas"
       - "Niñeces y adolescencias"
       - Duración 60 minutos
-      - Costo individual $350 pesos
+      - Costo individual $400 pesos
       - Modalidad Presencial y En Línea
       - Ubicación en Av. Marcos Montero Ruiz 147A, Colonia Hacienda de Tlaquepaque, San Pedro Tlaquepaque, Jalisco
     button:
