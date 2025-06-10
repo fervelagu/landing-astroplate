@@ -27,6 +27,7 @@ features:
       - "Formación en Perspectiva de Género"
       - "Atención especializada a Mujeres Víctimas de Violencia"
       - "Certificada en el Estándar EC0308"
+      - "Maestranda en Terapia Familiar Sistémica"
     button:
       enable: false
       label: "Get Started Now"
